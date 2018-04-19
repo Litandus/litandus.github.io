@@ -22,7 +22,6 @@ var flairs = [
 function update_link() {
     var lang_name = "";
     $("[type='checkbox']").each(function(id, checkbox) {
-    console.log($(checkbox));
     if(!$(checkbox).is(":checked")) {
         lang_name += $(checkbox).prop("id");
     }
