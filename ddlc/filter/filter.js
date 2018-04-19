@@ -43,8 +43,8 @@ function update_link() {
 $(function() {
     flairs.forEach(function(flair) {
         $(".checkbox-area").append('<div class="filter-checkbox"><input type="checkbox" id="'+flair["id"]+'" checked></input><label for="'+flair["id"]+'">'+flair["name"]+'</label></div>');
-        update_link();
     });
+    update_link();    
 
     $("[type='checkbox']").change(update_link);
 
