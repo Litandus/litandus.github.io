@@ -19,34 +19,30 @@ var flairs = [
     { "id": "i", "name": "Game Mod" }
 ];
 
+function update_link() {
+    var lang_name = "";
+    $("[type='checkbox']").each(function(id, checkbox) {
+    console.log($(checkbox));
+    if(!$(checkbox).is(":checked")) {
+        lang_name += $(checkbox).prop("id");
+    }
+    });
+    $("[type='checkbox']:checked").each(function () {
+    $(this).prop('disabled', lang_name.length == 3);
+    });
+    lang_name = ("0000"+lang_name).substring(lang_name.length);
+    lang_name = lang_name.substring(0, 2) + "-" + lang_name.substring(2, 4);
+
+    link = '<a href="https://' + lang_name + '.reddit.com/r/DDLC">Filter</a>';
+    $(".link-button").html(link);
+}
+
 $(function() {
     flairs.forEach(function(flair) {
-        $(".checkbox-area").append('<div><input type="checkbox" id="'+flair["id"]+'" checked></input><label for="'+flair["id"]+'">'+flair["name"]+'</label></div>');
-        
-        lang_name = "00-00";
-        link = '<a href="https://' + lang_name + '.reddit.com/r/DDLC">here</a>';
-        $(".link").html(link);
+        $(".checkbox-area").append('<div class="filter-checkbox"><input type="checkbox" id="'+flair["id"]+'" checked></input><label for="'+flair["id"]+'">'+flair["name"]+'</label></div>');
+        update_link();
     });
 
-
-    $("[type='checkbox']").change(function() {
-        setTimeout(function() {
-        var lang_name = "";
-        $("[type='checkbox']").each(function(id, checkbox) {
-            console.log($(checkbox));
-            if(! $(checkbox).is(":checked")) {
-                lang_name += $(checkbox).prop("id");
-            }
-        });
-        $("[type='checkbox']:checked").each(function () {
-            $(this).prop('disabled', lang_name.length == 3);
-        });
-        lang_name = ("0000"+lang_name).substring(lang_name.length);
-        lang_name = lang_name.substring(0, 2) + "-" + lang_name.substring(2, 4);
-        
-        link = '<a href="https://' + lang_name + '.reddit.com/r/DDLC">here</a>';
-        $(".link").html(link);
-        }, 0);
-    });
+    $("[type='checkbox']").change(update_link);
 
 });
