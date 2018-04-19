@@ -28,11 +28,15 @@ function update_link() {
     }
     });
     $("[type='checkbox']:checked").each(function () {
-    $(this).prop('disabled', lang_name.length == 3);
+        $(this).prop('disabled', lang_name.length == 3);
     });
     lang_name = ("0000"+lang_name).substring(lang_name.length);
     lang_name = lang_name.substring(0, 2) + "-" + lang_name.substring(2, 4);
 
+    if(lang_name === "0000") {
+        lang_name = "www";
+    }
+    
     link = '<a href="https://' + lang_name + '.reddit.com/r/DDLC">Filter</a>';
     $(".link-button").html(link);
 }
