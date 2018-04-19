@@ -33,7 +33,7 @@ function update_link() {
     lang_name = ("0000"+lang_name).substring(lang_name.length);
     lang_name = lang_name.substring(0, 2) + "-" + lang_name.substring(2, 4);
 
-    if(lang_name === "0000") {
+    if(lang_name === "00-00") {
         lang_name = "www";
     }
     
