@@ -22,11 +22,11 @@ var flairs = [
 function update_link() {
     var lang_name = "";
     $("[type='checkbox']").each(function(id, checkbox) {
-    if(!$(checkbox).is(":checked")) {
-        lang_name += $(checkbox).prop("id");
-    }
+        if(!$(checkbox).is(":checked")) {
+            lang_name += $(checkbox).prop("id");
+        }
     });
-    $("[type='checkbox']:checked").each(function () {
+    $("[type='checkbox']:checked").each(function() {
         $(this).prop('disabled', lang_name.length == 3);
     });
     lang_name = ("0000"+lang_name).substring(lang_name.length);
