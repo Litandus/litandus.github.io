@@ -39,7 +39,7 @@ $(function() {
             }
         });
         $("[type='checkbox']:checked").each(function () {
-            $(this).prop('disabled', lang_name.length == 4);
+            $(this).prop('disabled', lang_name.length == 3);
         });
         lang_name = ("0000"+lang_name).substring(lang_name.length);
         lang_name = lang_name.substring(0, 2) + "-" + lang_name.substring(2, 4);
