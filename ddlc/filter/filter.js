@@ -16,7 +16,8 @@ var flairs = [
     { "id": "f", "name": "Fun" },
     { "id": "g", "name": "Misc" },
     { "id": "h", "name": "Gameplay" },
-    { "id": "i", "name": "Game Mod" }
+    { "id": "i", "name": "Game Mod" },
+    { "id": "j", "name": "Poetry (on /new only)" }
 ];
 
 function update_link() {
