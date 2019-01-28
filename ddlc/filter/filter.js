@@ -6,7 +6,7 @@ var flairs = [
     { "id": "5", "name": "Found Fanart" },
     { "id": "6", "name": "Music" },
     { "id": "7", "name": "Video" },
-    { "id": "8", "name": "Cosplay" },
+    { "id": "8", "name": "IRL Media" },
 	{ "id": "k", "name": "OC Edited Media" },	
     { "id": "9", "name": "Found Edited Media" },
     { "id": "a", "name": "Poetry" },
